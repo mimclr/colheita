@@ -26,9 +26,7 @@
     --gray-700: #444441;
     --gray-900: #1C1C1A;
     --white: #FFFFFF;
-    --radius-sm: 6px;
     --radius-md: 10px;
-    --radius-lg: 16px;
     --radius-xl: 24px;
   }
 
@@ -43,15 +41,7 @@
     padding: 2rem 1rem 4rem;
   }
 
-  .wrapper {
-    width: 100%;
-    max-width: 520px;
-  }
-
-  /* Header */
-  .header {
-    margin-bottom: 1.5rem;
-  }
+  .wrapper { width: 100%; max-width: 520px; }
 
   .brand-row {
     display: flex;
@@ -60,12 +50,7 @@
     margin-bottom: 1rem;
   }
 
-  .brand-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--green-600);
-  }
+  .brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green-600); }
 
   .brand-name {
     font-size: 12px;
@@ -75,21 +60,10 @@
     color: var(--gray-400);
   }
 
-  .title {
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--gray-900);
-    margin-bottom: 6px;
-  }
+  h1 { font-size: 28px; font-weight: 800; line-height: 1.1; color: var(--gray-900); margin-bottom: 6px; }
 
-  .subtitle {
-    font-size: 14px;
-    color: var(--gray-400);
-    font-weight: 400;
-  }
+  .subtitle { font-size: 14px; color: var(--gray-400); font-weight: 400; margin-bottom: 1.5rem; }
 
-  /* Card base */
   .card {
     background: var(--white);
     border-radius: var(--radius-xl);
@@ -107,296 +81,143 @@
     margin-bottom: 1.25rem;
   }
 
-  /* Sliders */
-  .slider-group {
-    margin-bottom: 1.25rem;
-  }
+  .input-group { margin-bottom: 1.1rem; }
+  .input-group:last-child { margin-bottom: 0; }
 
-  .slider-group:last-child { margin-bottom: 0; }
-
-  .slider-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 8px;
-  }
-
-  .slider-name {
-    font-size: 14px;
-    font-weight: 500;
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--gray-700);
-  }
-
-  .slider-value {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--gray-900);
-  }
-
-  .slider-track {
-    position: relative;
-    height: 6px;
-    background: var(--gray-100);
-    border-radius: 99px;
     margin-bottom: 6px;
   }
 
-  .slider-fill {
+  .input-wrap { position: relative; display: flex; align-items: center; }
+
+  .affix {
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    border-radius: 99px;
-    background: var(--green-600);
-    transition: width 0.15s ease;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-400);
     pointer-events: none;
   }
 
-  input[type=range] {
-    position: absolute;
-    top: -6px;
-    left: 0;
+  .affix.left  { left: 14px; }
+  .affix.right { right: 14px; }
+
+  input[type=number] {
     width: 100%;
-    height: 18px;
-    opacity: 0;
-    cursor: pointer;
-    margin: 0;
-  }
-
-  .slider-limits {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--gray-400);
-    font-weight: 500;
-  }
-
-  /* Results card */
-  .results-card {
-    background: var(--gray-900);
-    border-radius: var(--radius-xl);
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .results-card .card-title {
-    color: var(--gray-400);
-  }
-
-  .result-main {
-    margin-bottom: 1.25rem;
-  }
-
-  .result-main-label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--gray-400);
-    margin-bottom: 4px;
-  }
-
-  .result-main-value {
-    font-size: 42px;
-    font-weight: 800;
-    color: var(--red-200);
-    line-height: 1;
-    transition: color 0.3s;
-  }
-
-  .result-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .result-item {
-    background: rgba(255,255,255,0.06);
+    height: 52px;
+    border: 1.5px solid var(--gray-200);
     border-radius: var(--radius-md);
-    padding: 12px 14px;
-  }
-
-  .result-item-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--gray-400);
-    margin-bottom: 4px;
-  }
-
-  .result-item-value {
-    font-size: 17px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 18px;
     font-weight: 700;
-    color: var(--white);
+    color: var(--gray-900);
+    background: var(--gray-50);
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+    -moz-appearance: textfield;
   }
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+  input[type=number]:focus { border-color: var(--green-600); background: var(--white); }
+
+  .pad-left  input[type=number] { padding: 0 14px 0 38px; }
+  .pad-right input[type=number] { padding: 0 38px 0 14px; }
+  .pad-none  input[type=number] { padding: 0 14px; }
+
+  .hint { font-size: 11px; color: var(--gray-400); margin-top: 5px; }
+
+  /* Results dark card */
+  .results-card { background: var(--gray-900); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1rem; }
+  .results-card .card-title { color: var(--gray-400); }
+
+  .result-main { margin-bottom: 1.25rem; }
+  .result-main-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400); margin-bottom: 4px; }
+  .result-main-value { font-size: 42px; font-weight: 800; color: var(--red-200); line-height: 1; transition: color 0.3s; }
+
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .result-item { background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 12px 14px; }
+  .result-item-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--gray-400); margin-bottom: 4px; }
+  .result-item-value { font-size: 17px; font-weight: 700; color: #fff; }
   .result-item-value.green { color: #97C459; }
-  .result-item-value.red { color: var(--red-200); }
+  .result-item-value.red   { color: var(--red-200); }
 
-  /* Risk badge */
-  .risk-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
+  .risk-row { display: flex; align-items: center; gap: 10px; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .risk-label { font-size: 12px; color: var(--gray-400); font-weight: 500; }
+  .risk-badge { font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 99px; transition: all 0.2s; }
+  .risk-low  { background: var(--green-50); color: var(--green-800); }
+  .risk-mod  { background: var(--amber-50); color: var(--amber-600); }
+  .risk-high { background: #FAECE7; color: #993C1D; }
+  .risk-crit { background: var(--red-50); color: var(--red-700); }
 
-  .risk-label {
-    font-size: 12px;
-    color: var(--gray-400);
-    font-weight: 500;
-  }
+  /* Formula */
+  .formula-card { background: var(--green-50); border-radius: var(--radius-xl); border: 1px solid var(--green-100); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .formula-card .card-title { color: var(--green-600); margin-bottom: 0.75rem; }
+  .formula-eq { font-size: 13px; color: var(--green-800); font-weight: 500; line-height: 1.7; }
+  .formula-eq strong { font-weight: 800; font-size: 14px; }
 
-  .risk-badge {
-    font-size: 12px;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 99px;
-    transition: all 0.3s;
-  }
-
-  .risk-low    { background: var(--green-50);  color: var(--green-800); }
-  .risk-mod    { background: var(--amber-50);  color: var(--amber-600); }
-  .risk-high   { background: #FAECE7;          color: #993C1D; }
-  .risk-crit   { background: var(--red-50);    color: var(--red-700); }
-
-  /* Formula card */
-  .formula-card {
-    background: var(--green-50);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--green-100);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .formula-card .card-title {
-    color: var(--green-600);
-    margin-bottom: 0.75rem;
-  }
-
-  .formula-eq {
-    font-size: 13px;
-    color: var(--green-800);
-    font-weight: 500;
-    line-height: 1.6;
-  }
-
-  .formula-eq strong {
-    font-weight: 800;
-    font-size: 15px;
-  }
-
-  /* Reference table */
-  .table-card {
-    background: var(--white);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--gray-200);
-    padding: 1.5rem;
-    overflow: hidden;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-
-  thead th {
-    text-align: left;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--gray-400);
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--gray-100);
-  }
-
-  tbody td {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--gray-100);
-    font-weight: 500;
-    color: var(--gray-700);
-  }
-
+  /* Table */
+  .table-card { background: var(--white); border-radius: var(--radius-xl); border: 1px solid var(--gray-200); padding: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400); padding-bottom: 10px; border-bottom: 1px solid var(--gray-100); }
+  tbody td { padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-weight: 500; color: var(--gray-700); }
   tbody tr:last-child td { border-bottom: none; }
-
   tbody td:first-child { font-weight: 700; color: var(--gray-900); }
   tbody td:last-child  { font-weight: 700; color: var(--red-600); }
 
-  /* Footer */
-  .footer {
-    text-align: center;
-    font-size: 11px;
-    color: var(--gray-400);
-    margin-top: 1.5rem;
-    font-weight: 500;
-  }
+  .footer { text-align: center; font-size: 11px; color: var(--gray-400); margin-top: 1.5rem; font-weight: 500; }
 
   @media (max-width: 420px) {
-    .title { font-size: 22px; }
-    .result-main-value { font-size: 34px; }
+    h1 { font-size: 22px; }
+    .result-main-value { font-size: 32px; }
   }
 </style>
 </head>
 <body>
-
 <div class="wrapper">
 
-  <div class="header">
-    <div class="brand-row">
-      <div class="brand-dot"></div>
-      <span class="brand-name">Labor Rural · Café e Gestão</span>
-    </div>
-    <h1 class="title">Calculadora de Perdas na Colheita</h1>
-    <p class="subtitle">Ponto ideal de colheita — impacto do café verde no resultado</p>
+  <div class="brand-row">
+    <div class="brand-dot"></div>
+    <span class="brand-name">Labor Rural · Café e Gestão</span>
   </div>
+  <h1>Calculadora de Perdas na Colheita</h1>
+  <p class="subtitle">Ponto ideal de colheita — impacto do café verde no resultado</p>
 
-  <!-- Inputs -->
   <div class="card">
     <p class="card-title">Parâmetros da lavoura</p>
 
-    <div class="slider-group">
-      <div class="slider-header">
-        <span class="slider-name">% de café verde na colheita</span>
-        <span class="slider-value" id="out-verde">20%</span>
+    <div class="input-group">
+      <label for="inp-verde">Percentual de café verde na colheita</label>
+      <div class="input-wrap pad-right">
+        <input type="number" id="inp-verde" min="0" max="100" step="0.1" value="20" oninput="calc()">
+        <span class="affix right">%</span>
       </div>
-      <div class="slider-track">
-        <div class="slider-fill" id="fill-verde" style="width:24%"></div>
-        <input type="range" id="sl-verde" min="1" max="80" value="20" step="1" oninput="calc()">
-      </div>
-      <div class="slider-limits"><span>1%</span><span>80%</span></div>
+      <p class="hint">Recomendação: manter abaixo de 10% para menor risco</p>
     </div>
 
-    <div class="slider-group">
-      <div class="slider-header">
-        <span class="slider-name">Sacas beneficiadas (total)</span>
-        <span class="slider-value" id="out-sacas">500</span>
+    <div class="input-group">
+      <label for="inp-sacas">Total de sacas beneficiadas</label>
+      <div class="input-wrap pad-none">
+        <input type="number" id="inp-sacas" min="1" step="1" value="500" oninput="calc()">
       </div>
-      <div class="slider-track">
-        <div class="slider-fill" id="fill-sacas" style="width:9%"></div>
-        <input type="range" id="sl-sacas" min="50" max="5000" value="500" step="50" oninput="calc()">
-      </div>
-      <div class="slider-limits"><span>50</span><span>5.000</span></div>
+      <p class="hint">Produção total esperada da safra</p>
     </div>
 
-    <div class="slider-group">
-      <div class="slider-header">
-        <span class="slider-name">Preço da saca beneficiada</span>
-        <span class="slider-value" id="out-preco">R$ 1.000</span>
+    <div class="input-group">
+      <label for="inp-preco">Preço da saca beneficiada</label>
+      <div class="input-wrap pad-left">
+        <span class="affix left">R$</span>
+        <input type="number" id="inp-preco" min="1" step="50" value="1000" oninput="calc()">
       </div>
-      <div class="slider-track">
-        <div class="slider-fill" id="fill-preco" style="width:25%"></div>
-        <input type="range" id="sl-preco" min="500" max="2500" value="1000" step="50" oninput="calc()">
-      </div>
-      <div class="slider-limits"><span>R$ 500</span><span>R$ 2.500</span></div>
+      <p class="hint">Valor de comercialização praticado</p>
     </div>
   </div>
 
-  <!-- Results -->
   <div class="results-card">
     <p class="card-title">Resultado</p>
 
@@ -407,7 +228,7 @@
 
     <div class="result-grid">
       <div class="result-item">
-        <p class="result-item-label">% perda rendimento</p>
+        <p class="result-item-label">% Perda rendimento</p>
         <p class="result-item-value red" id="res-pct">5,16%</p>
       </div>
       <div class="result-item">
@@ -430,17 +251,15 @@
     </div>
   </div>
 
-  <!-- Formula -->
   <div class="formula-card">
     <p class="card-title">Equação aplicada</p>
     <p class="formula-eq">
-      <strong>Prejuízo = 2,58 × %verde × sacas × (preço ÷ 1.000)</strong><br>
+      <strong>Prejuízo = 2,58 × % verde × sacas × (preço ÷ 1.000)</strong><br>
       Coeficiente calibrado a partir dos dados do Dr. Aldir Alves Teixeira.<br>
       A cada 1% de café verde, o rendimento cai <strong>0,258%</strong>.
     </p>
   </div>
 
-  <!-- Reference table -->
   <div class="table-card">
     <p class="card-title">Tabela de referência (base: 1.000 sacas · R$ 1.000/sc)</p>
     <table>
@@ -464,60 +283,37 @@
   <p class="footer">Labor Rural · Café e Gestão · Material de treinamento técnico</p>
 
 </div>
-
 <script>
-  function fmt(n) {
-    return n.toLocaleString('pt-BR');
-  }
-
-  function pct(val, min, max) {
-    return ((val - min) / (max - min) * 100).toFixed(1) + '%';
-  }
+  function fmt(n) { return n.toLocaleString('pt-BR'); }
 
   function calc() {
-    const verde = parseInt(document.getElementById('sl-verde').value);
-    const sacas = parseInt(document.getElementById('sl-sacas').value);
-    const preco = parseInt(document.getElementById('sl-preco').value);
+    const verde = parseFloat(document.getElementById('inp-verde').value) || 0;
+    const sacas = parseFloat(document.getElementById('inp-sacas').value) || 0;
+    const preco = parseFloat(document.getElementById('inp-preco').value) || 0;
 
-    document.getElementById('out-verde').textContent = verde + '%';
-    document.getElementById('out-sacas').textContent = fmt(sacas);
-    document.getElementById('out-preco').textContent = 'R$ ' + fmt(preco);
+    const percPerda   = 0.258 * verde;
+    const sacasPerd   = Math.round(sacas * percPerda / 100);
+    const sacasEfet   = Math.round(sacas - sacasPerd);
+    const prejuizo    = Math.round(sacasPerd * preco);
+    const receita     = Math.round(sacasEfet * preco);
 
-    document.getElementById('fill-verde').style.width = pct(verde, 1, 80);
-    document.getElementById('fill-sacas').style.width = pct(sacas, 50, 5000);
-    document.getElementById('fill-preco').style.width = pct(preco, 500, 2500);
-
-    const percPerda = 0.258 * verde;
-    const sacasPerdidas = Math.round(sacas * percPerda / 100);
-    const sacasEfetivas = sacas - sacasPerdidas;
-    const prejuizo = Math.round(sacasPerdidas * preco);
-    const receita = Math.round(sacasEfetivas * preco);
-
-    document.getElementById('res-prej').textContent = 'R$ ' + fmt(prejuizo);
-    document.getElementById('res-pct').textContent = percPerda.toFixed(2).replace('.', ',') + '%';
-    document.getElementById('res-sacas-perd').textContent = fmt(sacasPerdidas) + ' sacas';
-    document.getElementById('res-efetivas').textContent = fmt(sacasEfetivas) + ' sacas';
-    document.getElementById('res-receita').textContent = 'R$ ' + fmt(receita);
+    document.getElementById('res-prej').textContent       = 'R$ ' + fmt(prejuizo);
+    document.getElementById('res-pct').textContent        = percPerda.toFixed(2).replace('.', ',') + '%';
+    document.getElementById('res-sacas-perd').textContent = fmt(sacasPerd) + ' sacas';
+    document.getElementById('res-efetivas').textContent   = fmt(sacasEfet) + ' sacas';
+    document.getElementById('res-receita').textContent    = 'R$ ' + fmt(receita);
 
     const badge = document.getElementById('risk-badge');
-    const main = document.getElementById('res-prej');
+    const main  = document.getElementById('res-prej');
 
     if (verde <= 10) {
-      badge.textContent = 'Baixo';
-      badge.className = 'risk-badge risk-low';
-      main.style.color = '#97C459';
+      badge.textContent = 'Baixo';   badge.className = 'risk-badge risk-low';  main.style.color = '#97C459';
     } else if (verde <= 25) {
-      badge.textContent = 'Moderado';
-      badge.className = 'risk-badge risk-mod';
-      main.style.color = '#FAC775';
+      badge.textContent = 'Moderado'; badge.className = 'risk-badge risk-mod'; main.style.color = '#FAC775';
     } else if (verde <= 40) {
-      badge.textContent = 'Alto';
-      badge.className = 'risk-badge risk-high';
-      main.style.color = '#F09595';
+      badge.textContent = 'Alto';    badge.className = 'risk-badge risk-high'; main.style.color = '#F09595';
     } else {
-      badge.textContent = 'Crítico';
-      badge.className = 'risk-badge risk-crit';
-      main.style.color = '#F09595';
+      badge.textContent = 'Crítico'; badge.className = 'risk-badge risk-crit'; main.style.color = '#F09595';
     }
   }
 
